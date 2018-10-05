@@ -8,6 +8,7 @@ require_relative '../views/mainView'
 class BookController
 
   def getBooks
+    checkImagesDir
     booksResponse = RestClient.get Routes::getBooksUri
     parsedResults = JSON.parse(booksResponse)
     books = []
@@ -17,6 +18,11 @@ class BookController
       currentBook.saveImage
     end
     MainView::showBooks books
+  end
+
+  def checkImagesDir
+    file = File.join(Dir.pwd, "/images")
+    Dir.mkdir(file) unless Dir.exist?(file)
   end
 
 end
