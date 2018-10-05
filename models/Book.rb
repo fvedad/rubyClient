@@ -32,7 +32,7 @@ class Book
 
   def printInfo
     print "#{title} - #{author} \n"
-    print "Description: \n #{description} \n"
+    print "Description: \n#{description} \n"
   end
 
   def self.requiredBookArgs
