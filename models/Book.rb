@@ -1,6 +1,5 @@
 require 'json'
 require 'catpix'
-require 'base64'
 
 class Book
 
