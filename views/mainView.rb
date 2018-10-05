@@ -1,12 +1,15 @@
+require_relative '../utils/strings'
+
 class MainView
   class << self
     
     def showBooks(books)
       unless !books
-        print "--------------- \n" 
+        print Strings::seperator 
         books.each do |a|
+          a.printImage
           a.printInfo
-          print "--------------- \n"  
+          print Strings::seperator
         end
       else
         print 'Cannot fetch books'

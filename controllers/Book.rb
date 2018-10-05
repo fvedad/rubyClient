@@ -12,7 +12,9 @@ class BookController
     parsedResults = JSON.parse(booksResponse)
     books = []
     parsedResults['book'].each do |book|
-      books << Book.new(book['title'], book['author'], book['description'], book["image"])
+      currentBook = Book.new(book['title'], book['author'], book['description'], book["image"])
+      books << currentBook
+      currentBook.saveImage
     end
     MainView::showBooks books
   end
