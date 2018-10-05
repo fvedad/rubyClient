@@ -1,5 +1,4 @@
 require 'json'
-require 'catpix'
 
 class Book
 
@@ -17,17 +16,6 @@ class Book
     File.open(File.join(Dir.pwd, "/images/#{title}.jpg"), 'wb') do |f|
       f.write(decoded)
     end
-  end
-
-  def printImage
-    Catpix::print_image File.join(Dir.pwd, "/images/#{title}.jpg"),
-      :limit_x => 0.5,
-      :limit_y => 0.5,
-      :center_x => false,
-      :center_y => false,
-      :bg => "black",
-      :bg_fill => false,
-      :resolution => "high"
   end
 
   def printInfo

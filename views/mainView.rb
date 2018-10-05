@@ -7,7 +7,6 @@ class MainView
       unless !books
         print Strings::seperator 
         books.each do |a|
-          a.printImage
           a.printInfo
           print Strings::seperator
         end
