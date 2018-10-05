@@ -1,26 +1,22 @@
 class Book
-  def set_title(title)
+
+  attr_reader :title, :author, :description, :image_base64
+
+  def initialize(title, author, description, image_base64)
     @title = title
-  end
-  def get_title
-    @title
-  end
-  def set_author(author)
     @author = author
+    @description = description
+    @image_base64 = image_base64
   end
-  def get_author
-    @author
+
+  def printInfo
+    print title + " - " + author + " \n"
+    print "Description: \n" + description + "\n"
   end
-  def set_description(desc)
-    @description = desc
+
+  def self.requiredBookArgs
+    print "Required arguments: \n"
+    print "title, author, description, base64 encoded image\n"
   end
-  def get_description
-    @description
-  end
-  def set_image_base64(base64String)
-    @base64String = base64String
-  end
-  def get_image_base64
-    @base64String
-  end
+
 end
